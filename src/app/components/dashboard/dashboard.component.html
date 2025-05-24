@@ -1,0 +1,19 @@
+<h2>Portfolio Dashboard</h2>
+<p-table [value]="investments">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Asset Type</th>
+      <th>Quantity</th>
+      <th>Purchase Price</th>
+      <th>Date</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-investment>
+    <tr>
+      <td>{{ investment.assetType }}</td>
+      <td>{{ investment.quantity }}</td>
+      <td>{{ investment.purchasePrice }}</td>
+      <td>{{ investment.date | fullDate }}</td>
+    </tr>
+  </ng-template>
+</p-table>

@@ -1,0 +1,52 @@
+<div class="mt-10">
+  <p-panel header="Add Investment">
+    <form
+      [formGroup]="investmentForm"
+      autocomplete="off"
+      (ngSubmit)="onSubmit()"
+      class="p-fluid"
+    >
+      <div class="p-field">
+        <label for="assetType">Asset Type</label>
+        <input pInputText id="assetType" formControlName="assetType" />
+      </div>
+
+      <div class="p-field mt-10">
+        <label for="quantity">Quantity</label>
+        <input
+          pInputText
+          id="quantity"
+          type="number"
+          formControlName="quantity"
+        />
+      </div>
+
+      <div class="p-field mt-10">
+        <label for="purchasePrice">Purchase Price</label>
+        <input
+          pInputText
+          id="purchasePrice"
+          type="number"
+          formControlName="purchasePrice"
+        />
+      </div>
+
+      <div class="p-field mt-10">
+        <label for="date">Date</label>
+        <p-calendar
+          inputId="date"
+          formControlName="date"
+          dateFormat="yy-mm-dd"
+        ></p-calendar>
+      </div>
+
+      <button
+        class="mt-10"
+        pButton
+        type="submit"
+        label="Submit"
+        [disabled]="investmentForm.invalid"
+      ></button>
+    </form>
+  </p-panel>
+</div>
